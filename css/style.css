@@ -1,0 +1,273 @@
+html, body{height: 100%;}
+body {
+    color: #f1f1f1;
+    background-color: #1a1a1a;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.font {font-family: 'Roboto', sans-serif;}
+
+
+.page{height: 100%;}
+.page > .left_page, .page > .right_page {position: relative;}
+/* ----------------------- page1 ----------------------- */
+#page1 {position: relative;}
+#page1 > h1 {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    text-align: center;
+    line-height: 70px;
+    font-size: 40px;
+}
+#page1 > h1 > span {font-weight: 600;}
+
+
+/* ----------------------- page2 ----------------------- */
+#page2::after {content: ""; display: block; clear: both;}
+
+.left_page {float: left; height: 100%; width: 50%;}
+.right_page {float: left; height: 100%; width: 50%;}
+
+/* #page2 > .left_page */
+#about_img {
+    width: 650px;
+    
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+#about_img > img {
+    width: 100%;
+    box-shadow: -44px 25px #8400a5;
+}
+
+/* #page2 > .right_page */
+#about_info {
+    position: absolute;
+    top: 50%; left: 10%;
+    transform: translateY(-50%);
+}
+
+.about {
+    font-size: 20px;
+    line-height: 30px;
+}
+.about:not(:first-child) {margin-top: 70px;}
+
+.about > .font {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+}
+.about > hr {
+    width: 180px;
+    size: 1;
+    margin: 15px 0 25px 0;
+}
+
+
+/* ----------------------- page3 ----------------------- */
+#page3 > h3 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding: 170px 0;
+}
+
+#skill::after { content: ""; display: block; clear: both; }
+#skill {
+    width: 90%; 
+    margin: 50px auto;
+}
+
+.skill_progress {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.progress_bar {
+    width: 85%;
+    border: 1px solid #f1f1f1;
+    box-sizing: border-box;
+    margin: 70px auto;
+    
+    position: relative;
+}
+.progress_bar > p {
+    color: #f1f1f1;
+    position: absolute;
+    top: 0; right: 0;
+
+    padding-right: 7px;
+    line-height: 22px;
+}
+.progress_bar > .progress {
+    height: 22px;
+    background-color: #f1f1f1;
+    padding: 0;
+}
+.skill_progress:nth-child(1) > .progress_bar > .progress { width: 85%; animation: graph1 3s 1; }
+.skill_progress:nth-child(2) > .progress_bar > .progress { width: 80%; animation: graph2 3s 1; }
+.skill_progress:nth-child(3) > .progress_bar > .progress { width: 60%; animation: graph3 3s 1; }
+.skill_progress:nth-child(4) > .progress_bar > .progress { width: 80%; animation: graph4 3s 1; }
+
+@keyframes graph {
+    0% { color: rgba(241, 241, 241, 0); }
+    80% { color: rgba(241, 241, 241, 1); }
+} /* % 글씨 */
+@keyframes graph1 {
+    0% { width: 0; }
+    100% { width: 85%; }
+}
+@keyframes graph2 {
+    0% { width: 0; }
+    100% { width: 80%; }
+}
+@keyframes graph3 {
+    0% { width: 0; }
+    100% { width: 60%; }
+}
+@keyframes graph4 {
+    0% { width: 0; }
+    100% { width: 80%; }
+}
+
+
+/* ----------------------- page4 ----------------------- */
+/* #page4 > .left_page */
+.left_img {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 1000px; 
+}
+.left_img > img {
+    width: 100%;
+}
+
+/* #page4 > .right_page */
+.right_info {
+    position: absolute;
+    top: 50%; left: 3%;
+    transform: translateY(-50%);
+}
+.right_info > p {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.right_info > p > span {font-size: 30px;}
+
+.used::after {content: ""; display: block; clear: both;}
+.used > ul {float: left;}
+.used > ul > li {
+    font-size: 22px;
+    line-height: 33px;
+}
+
+.used > ul:last-child {margin-left: 35px; line-height: 33px;}
+#page4 > .right_page > .right_info > .used > ul:last-child > li:first-child {color: #8400a5;}
+
+.notice {margin-top: 30px; margin-left: 15px;}
+.notice > li {
+    padding: 0 0 10px 25px;
+    line-height: 30px;
+    font-size: 17px;
+
+    background: url(../images/cheak_icon.png) no-repeat;
+    background-size: 15px;
+    background-position-y: 7px;
+}
+
+/* ----------------------- page5 ----------------------- */
+#page5 {position: relative;}
+ /*button or #pages으로 인해 포지션 지정*/
+
+/* 메인 & 서브페이지 */
+#pages {
+    position: absolute;
+    top: 50px; right: 70px;
+}
+
+#pages > li {display: inline-block;}
+
+#pages > li > a {
+    color: #f1f1f1; 
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px;
+}
+#pages > li > a:hover {text-decoration: underline;} /*왜 효과가 안먹지..? 왜일까...*/
+
+#page5 > .right_page > .right_info > .used > ul:last-child > li:first-child {color: #ba000c;}
+
+
+/* hollys_button */
+/* #hollys_button > button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    border: none;
+    outline: none;
+    background: none;
+
+    color: #f1f1f1;
+    font-size: 80px;
+    font-weight: bold;
+    padding: 200px 70px; /*어디든 클릭해도 넘어가도록 영역을 넉넉하게 잡음
+    opacity: 0.3;
+}
+#hollys_button > button:first-child {left: 0;}
+#hollys_button > button:last-child {right: 0;}
+
+#hollys_button > button:hover {
+    opacity: 1;
+    transition-duration: 0.2s;
+    cursor: pointer;
+} */
+
+
+/* ----------------------- page6 ----------------------- */
+
+
+
+/* ----------------------- page7 ----------------------- */
+/* #page7 > .left_page */
+#contactImg {
+    width: 650px;
+
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* #page7 > .right_page */
+#self_introduction {
+    position: absolute;
+    top: 50%; left: 5%;
+    transform: translateY(-50%);
+}
+
+#self_introduction > p{
+    font-size: 20px;
+    line-height: 40px;
+}
+
+#contact {margin-top: 45px;}
+#contact > p {
+    font-size: 20px; 
+    line-height: 40px;
+    cursor: pointer;
+}
+#contact > p > a {
+    color: #f1f1f1; 
+    text-decoration: none;
+}
+
+#contact > p > a, #contact > p > span {margin-left: 20px;}
+#contact > p:hover > a, #contact > p:hover > span {text-decoration: underline;}
