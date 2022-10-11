@@ -3,6 +3,9 @@ body {
     color: #f1f1f1;
     background-color: #1a1a1a;
     font-family: 'Noto Sans KR', sans-serif;
+    /* 스크롤 안보이게하기 */
+    overflow: hidden;
+    touch-action: none;
 }
 .font {font-family: 'Roboto', sans-serif;}
 
@@ -22,6 +25,40 @@ body {
     font-size: 40px;
 }
 #page1 > h1 > span {font-weight: 600;}
+
+/* #page_indicator */
+#page_indicator {
+    position: fixed;
+    top: 50%; right: 40px;
+    transform: translateY(-50%);
+
+    z-index: 9999;
+}
+#page_indicator > li {
+    line-height: 32px;
+    text-align: center;
+}
+
+#page_indicator > li > a {
+    color: #f1f1f1;
+    text-decoration: none;
+    display: block; /* 호버되면서 글씨크기로 인해 여백 바뀜 방지 */
+    font-size: 8px;
+
+    position: relative;
+}
+#page_indicator > li > a.on {font-size: 17px;}
+#page_indicator > li > a:hover {font-size: 17px;}
+
+#page_indicator > li > a > span {
+    position: absolute;
+    top: 0; right: 30px;
+    white-space: nowrap; /* 줄바꿈 방지 */
+    font-size: 17px;
+    cursor: pointer;
+    display: none;
+}
+
 
 
 /* ----------------------- page2 ----------------------- */
@@ -152,7 +189,7 @@ body {
 /* #page4 > .right_page */
 .right_info {
     position: absolute;
-    top: 50%; left: 3%;
+    top: 50%; left: 7%;
     transform: translateY(-50%);
 }
 .right_info > p {
@@ -184,52 +221,45 @@ body {
 }
 
 /* ----------------------- page5 ----------------------- */
-#page5 {position: relative;}
- /*button or #pages으로 인해 포지션 지정*/
+#page5 {position: relative; /*#pages으로 인해 포지션 지정*/}
 
-/* 메인 & 서브페이지 */
+/* 메인 & 서브페이지 탭 */
 #pages {
     position: absolute;
     top: 50px; right: 70px;
 }
+#pages::after {content: ""; display: block; clear: both;}
 
-#pages > li {display: inline-block;}
-
-#pages > li > a {
-    color: #f1f1f1; 
-    text-decoration: none;
+#pages > li {
+    float: left;
     font-size: 18px;
     padding: 20px;
-}
-#pages > li > a:hover {text-decoration: underline;} /*왜 효과가 안먹지..? 왜일까...*/
-
-#page5 > .right_page > .right_info > .used > ul:last-child > li:first-child {color: #ba000c;}
-
-
-/* hollys_button */
-/* #hollys_button > button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    
-    border: none;
-    outline: none;
-    background: none;
-
-    color: #f1f1f1;
-    font-size: 80px;
-    font-weight: bold;
-    padding: 200px 70px; /*어디든 클릭해도 넘어가도록 영역을 넉넉하게 잡음
-    opacity: 0.3;
-}
-#hollys_button > button:first-child {left: 0;}
-#hollys_button > button:last-child {right: 0;}
-
-#hollys_button > button:hover {
-    opacity: 1;
-    transition-duration: 0.2s;
+    color: #444; 
     cursor: pointer;
-} */
+}
+#pages > .on {color: #f1f1f1; cursor: default;}
+
+
+/* 메인 & 서브페이지 내용 */
+#page5 > div.on {display: block;}
+.tab-content {width: 100%; height: 100%; display: none;}
+.tab-content::after {content: ""; display: block; clear: both;}
+
+/* .tab-content > .left_page, #mainPage > .right_page {float: left;} */
+.tab-content > .left_page > .left_img, .tab-content > .right_page > .right_info {position: relative;}
+.tab-content > .left_page > .left_img > img {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tab-content > .right_page > .right_info > img {
+    position: absolute;
+    top: 50%; left: 7%;
+    transform: translate(-50%, -50%);
+}
+
+.tab-content > .right_page > .right_info > .used > ul:last-child > li:first-child {color: #ba000c;}
 
 
 /* ----------------------- page6 ----------------------- */
@@ -271,3 +301,59 @@ body {
 
 #contact > p > a, #contact > p > span {margin-left: 20px;}
 #contact > p:hover > a, #contact > p:hover > span {text-decoration: underline;}
+
+
+
+/* ----------------------- 모바일 웹 ----------------------- */
+@media ( max-width: 767px ) {
+    /* body {
+        overflow: hidden;
+        touch-action: none;
+    } */
+    /* .page > .left_page {width: 100%;}
+    .page > .right_page {width: 100%;} */
+
+    /* ----- page1 ----- */
+    #page1 > h1 {
+        width: 80%;
+        line-height: 50px;
+        font-size: 28px;
+    }
+
+    
+    /* ----- page2 ----- */
+    #page2 > .left_page {width: 100%;}
+    #page2 > .right_page {width: 100%;}
+
+    #about_img {width: 500px;}
+    #about_img > img {box-shadow: -30px 25px #8400a5;}
+
+
+    /* ----- page3 ----- */
+    /* ----- page4 ----- */
+    /* ----- page5 ----- */
+    /* ----- page6 ----- */
+    /* ----- page7 ----- */
+    #page7 > .left_page {width: 100%;}
+    #page7 > .right_page {width: 100%;}
+
+    #contactImg {width: 550px;}
+
+    #self_introduction > p{
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    #contact {margin-top: 45px;}
+    #contact > p {
+        font-size: 20px; 
+        line-height: 40px;
+        cursor: pointer;
+    }
+    #contact > p > a {
+        color: #f1f1f1; 
+        text-decoration: none;
+    }
+
+    #contact > p > a, #contact > p > span {margin-left: 20px;}
+}
