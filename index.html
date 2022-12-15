@@ -11,41 +11,58 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://code.jquery.com/jquery.min.js"></script>
-        <script type="text/JavaScript" src="js/script.js"></script>
+        <script type="text/JavaScript" defer src="js/pageScroll.js"></script>
+        <script type="text/JavaScript" defer src="js/tap.js"></script>
+        <script type="text/JavaScript" defer src="js/indicator.js"></script>
+        <script type="text/JavaScript" defer src="js/pageScroll_moveClass_change.js"></script>
     </head>
     <body>
-        <div class="page" id="page1">
-            <h1>
-                안녕하세요 :D<br>
-                프론트앤드 개발자가 되고 싶은 '<span>곽미현의 포트폴리오</span>' 입니다.
-            </h1>
-            
-        </div><!-- /#page1 -->
-            
         <ul id="page_indicator">
             <li>
-                <a href="#page1" title="Hello" class="on">●<span>Hello</span></a>
+                <a href="#page1" class="move">●
+                    <span class="tooltip">Hello</span>
+                </a>
             </li>
             <li>
-                <a href="#page2" title="About">●<span>About</span></a>
+                <a href="#page2">●
+                    <span class="tooltip">About</span>
+                </a>
             </li>
             <li>
-                <a href="#page3" title="Skill">●<span>Skill</span></a>
+                <a href="#page3">●
+                    <span class="tooltip">Skill</span>
+                </a>
             </li>
             <li>
-                <a href="#page4" title="My Portpolio">●<span>My Portpolio</span></a>
+                <a href="#page4">●
+                    <span class="tooltip">My Portpolio</span>
+                </a>
             </li>
             <li>
-                <a href="#page5" title="Hollys">●<span>Hollys</span></a>
+                <a href="#page5">●
+                    <span class="tooltip">Hollys</span>
+                </a>
             </li>
             <li>
-                <a href="#page6" title="Crome">●<span>Crome</span></a>
+                <a href="#page6">●
+                    <span class="tooltip">Chrome</span>
+                </a>
             </li>
             <li>
-                <a href="#page7" title="Contact">●<span>Contact</span></a>
+                <a href="#page7">●
+                    <span class="tooltip">Contact</span>
+                </a>
             </li>
         </ul>
 
+        <div class="page" id="page1">
+            <h1>
+                안녕하세요 :D<br>
+                프론트앤드 개발자가 되고 싶은 <span>' 곽미현의 포트폴리오 '</span> 입니다.
+            </h1>
+            
+        </div><!-- /#page1 -->
+        
         <div class="page" id="page2">
             <div class="left_page">
                 <div id="about_img">
@@ -68,10 +85,10 @@
                         <h2 class="font">License</h2>
                         <hr>
                         <ul>
-                            <li>운전면허 1종</li>
-                            <li>GTQ그래픽기술자격 1급</li>
                             <li>웹디자인기능사</li>
-                            <li>정보처리기사 준비중</li>
+                            <li>한국엑셀 B등급</li>
+                            <li>GTQ그래픽기술자격 1급</li>
+                            <li>운전면허 1종</li>
                         </ul>
                     </div>
                     <div class="about">
@@ -139,15 +156,15 @@
                         </ul>
                         <ul>
                             <li>●</li>
-                            <li>Noto Sans KR</li>
+                            <li>Noto Sans KR, Roboto</li>
                         </ul>
                     </div>
     
                     <ul class="notice">
-                        <li>페이지스크롤 효과가 적용된 포트폴리오입니다.</li>
+                        <li>페이지스크롤 이벤트가 적용된 포트폴리오입니다.</li>
                         <li>스킬의 적응도에 관한 %게이지는 애니메이션으로 만들었습니다.</li>
                         <li>프로젝트로는 개인포트폴리오, 할리스, 크롬을 제작했습니다.</li>
-                        <li>할리스는 메인과 서브페이지를 만들어 클릭이벤트로 볼 수 있도록 만들었습니다.</li>
+                        <li>할리스는 메인&서브페이지를 만들어 클릭이벤트로 볼 수 있도록 만들었습니다.</li>
                     </ul> <!-- /.notice -->
                 </div><!-- /.right_info -->
             </div><!-- /.right_page -->
@@ -217,7 +234,7 @@
                         <ul class="notice">
                             <li>사이드바의 목록을 재분류했고 글꼴과 글꼴 두께 및 크기를 수정했습니다.</li>
                             <li>사이드 메뉴바를 클릭하면 그에 해당하는 사이드 서브메뉴가 나오도록 설정했습니다.</li>
-                            <li>각 음료에 대한 설명과 제품 정보고시는 해당하는 음료를 클릭했을 때 나오도록 수정했습니다.</li>
+                            <li>각 음료에 대한 설명과 제품 정보고시는 해당하는 음료를 클릭했을 때 나오도록 했습니다.</li>
                             <li>커피 페이지의 제품 진열 디자인과 more+ 버튼의 디자인을 수정했습니다.</li>
                             <li>서브페이지에도 탑 버튼을 추가했습니다.</li>
                         </ul>
@@ -227,9 +244,35 @@
         </div><!-- /#page5 -->
         
         <div class="page" id="page6">
-            <p>이후에 만드는 프로젝트는 여기!!</p>
-        </div><!-- /#page6 -->
-        
+            <div class="left_page">
+                <div class="left_img">
+                    <img src="images/chrome_mockup.png" alt="크롬 완성본 이미지">
+                </div>
+            </div><!-- /.left_page -->
+    
+            <div class="right_page">
+                <div class="right_info">
+                    <p>Chrome</p>
+    
+                    <div class="used">
+                        <ul>
+                            <li>Main Color</li>
+                        </ul>
+                        <ul>
+                            <li>●</li>
+                        </ul>
+                    </div>
+    
+                    <ul class="notice">
+                        <li>노마드 코더 영상을(바닐라 JS로 크롬 앱 만들기) 통해 제작하였습니다.</li>
+                        <li>개인정보 저장, 랜덤 재생 배경화면, 시계, 명언, 날씨, ToDoList로 구성되어 있습니다.</li>
+                        <li>변수를 지정할 때 var뿐 만 아니라 const와 let의 사용법과 차이를 알게 되었습니다.</li>
+                        <li>게으른 개발자가 되기 위한 변수 지정 꿀 팁, 백틱(`... ${...}`) 사용법 등을 배울 수 있었습니다.</li>
+                        <li>JavaScript를 통한 많은 효과들을 배우며 공부를 더 열심히 해보자는 생각이 들었습니다.</li>
+                    </ul> <!-- /.notice -->
+                </div><!-- /.right_info -->
+            </div><!-- /.right_page -->
+        </div><!-- /#page6 --> 
         
         <div class="page" id="page7">
             <div class="left_page">
@@ -249,13 +292,16 @@
                     </p>
     
                     <div id="contact">
+                        <p>E-mail :<span>gmh970310@naver.com</span></p>
                         <p>
                             Github :<a href="https://github.com/GwakMiHyeon">https://github.com/GwakMiHyeon</a>
                         </p>
-                        <p>E-mail :<span>gmh970310@naver.com</span></p>
                     </div>
                 </div><!-- /#self_introduction -->
             </div><!-- /.right_page -->
         </div><!-- /#page7 -->
+        
+        <div id="fullPage">
+        </div>    
     </body>
 </html>
