@@ -15,6 +15,7 @@ body {
     top: 50%; right: 40px;
     transform: translateY(-50%);
 
+    width: 20px;
     z-index: 9999;
 }
 #page_indicator > li {
@@ -28,10 +29,9 @@ body {
     display: block;
     font-size: 10px;
     transition-duration: 0.2s;
-   
+
     position: relative;
 }
-#page_indicator > li > a.move {font-size: 16px;}
 #page_indicator > li > a:hover {font-size: 16px;}
 
 .tooltip {
@@ -259,10 +259,6 @@ body {
 }
 
 .tab-content > .right_page > .right_info > .used > ul:last-child > li:first-child {color: #ba000c;}
-
-
-/* ----------------------- page6 ----------------------- */
-
 
 
 /* ----------------------- page7 ----------------------- */

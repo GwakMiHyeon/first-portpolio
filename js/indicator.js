@@ -1,7 +1,6 @@
 // 인디케이터 a클릭 시 해당되는 장소로 부드럽게 이동
 var $page = $(".page");
 var $indicator = $("#page_indicator");
-var indicatorA = $("#page_indicator > li > a");
 var indicator_height = $indicator.outerHeight(true);
 
 $(window).on('scroll', function () {
@@ -35,10 +34,9 @@ $indicator.find('a').on('click', function () {
 });
 
 
-
-
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // 인디케이터 툴팁
-$indicator.hover(function () {
+$("#page_indicator > li > a").hover(function () {
     $(this).children().show(300);
 }, function () {
     $(".tooltip").hide();
